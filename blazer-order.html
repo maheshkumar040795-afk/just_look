@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Order custom blazers online from Just Look. Choose colour, size and quantity — order instantly on WhatsApp.">
+<meta name="keywords" content="custom blazers, blazer shop Chennai, blazer manufacturer, order blazer online">
+<title>Order a Custom Blazer | Just Look</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><div><span class="logo-text">Just Look<span>.</span></span><span class="logo-tag">Customize Your Style</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bulk-orders.html">Bulk Orders</a></li>
+      <li><a href="blazer-order.html" class="active">Order a Blazer</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Quote</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <h1>Order a Custom Blazer</h1>
+  <p>Choose your colour, size and quantity — order instantly on WhatsApp.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> / Order a Blazer</div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="blazer-layout">
+      <div class="blazer-preview" data-aos="fade-right">
+        <img id="blazerPreview" src="https://placehold.co/700x900/1b2a4a/ffffff?text=Navy+Blue+Blazer" alt="Blazer preview">
+      </div>
+      <div data-aos="fade-left">
+        <span class="eyebrow">Custom Blazer</span>
+        <h2 class="section-title">Build Your <span>Blazer Order</span></h2>
+        <p class="section-subtitle" style="margin-bottom:30px;">Available in Black and Navy Blue. Select your options below.</p>
+
+        <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:10px;">Colour</label>
+        <div class="color-options">
+          <div class="color-swatch active" style="background:#1b2a4a;" onclick="selectColor(this,'Navy Blue','#1b2a4a')" title="Navy Blue"></div>
+          <div class="color-swatch" style="background:#141414;" onclick="selectColor(this,'Black','#141414')" title="Black"></div>
+        </div>
+
+        <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:10px;">Size</label>
+        <div class="size-options">
+          <div class="size-chip active" onclick="selectSize(this,'36')">36</div>
+          <div class="size-chip" onclick="selectSize(this,'38')">38</div>
+          <div class="size-chip" onclick="selectSize(this,'40')">40</div>
+          <div class="size-chip" onclick="selectSize(this,'42')">42</div>
+          <div class="size-chip" onclick="selectSize(this,'44')">44</div>
+          <div class="size-chip" onclick="selectSize(this,'46')">46</div>
+        </div>
+
+        <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:10px;">Quantity</label>
+        <div class="qty-control">
+          <button type="button" onclick="changeQty(-1)">−</button>
+          <span id="qtyValue">1</span>
+          <button type="button" onclick="changeQty(1)">+</button>
+        </div>
+
+        <div class="order-summary" id="orderSummary">Colour: <strong>Navy Blue</strong> &nbsp;|&nbsp; Size: <strong>36</strong> &nbsp;|&nbsp; Qty: <strong>1</strong></div>
+
+        <form onsubmit="orderBlazerOnWhatsApp(event)">
+          <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:6px;">Your Name</label>
+          <input type="text" id="orderName" placeholder="Enter your name" required style="width:100%; padding:14px 16px; border:1px solid var(--border); border-radius:10px; margin-bottom:14px;">
+          <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:6px;">Phone Number</label>
+          <input type="tel" id="orderPhone" placeholder="Enter your phone number" required style="width:100%; padding:14px 16px; border:1px solid var(--border); border-radius:10px; margin-bottom:20px;">
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; border:none;"><i class="fab fa-whatsapp"></i> Order on WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Why Order With Us</span>
+      <h2 class="section-title">The Just Look <span>Blazer Promise</span></h2>
+    </div>
+    <div class="grid-4">
+      <div class="feature-card" data-aos="fade-up"><div class="feature-icon"><i class="fas fa-ruler-combined"></i></div><h3>True-to-Size Fit</h3><p>Standard sizing charts tested for accuracy.</p></div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100"><div class="feature-icon"><i class="fas fa-scroll"></i></div><h3>Premium Fabric</h3><p>Durable, comfortable material with a sharp finish.</p></div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200"><div class="feature-icon"><i class="fas fa-rotate"></i></div><h3>Easy Exchange</h3><p>Size exchange support if the fit isn't right.</p></div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="300"><div class="feature-icon"><i class="fas fa-truck"></i></div><h3>Fast Dispatch</h3><p>Orders confirmed and dispatched quickly.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-text">Just Look<span style="color:var(--accent);">.</span></span>
+      <p>Premium tailoring & uniform specialists serving Chennai and Tamil Nadu with quality craftsmanship.</p>
+      <div class="social-links">
+        <a href="#" data-wa-generic target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="about.html">About Us</a></li></ul>
+    </div>
+    <div class="footer-links">
+      <h4>More</h4>
+      <ul><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-phone"></i> +91 99999 99999</p>
+      <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>GSTIN: 33APOPA8381D3ZX &nbsp;|&nbsp; MSME Udhyam Certified &nbsp;|&nbsp; 25+ Years of Experience</p>
+    <p>&copy; 2026 Just Look - Customize Your Style. All rights reserved. | Designed by Mahesh Kumar</p>
+  </div>
+</footer>
+
+<div class="floating-buttons">
+  <a href="#" data-wa-generic class="float-btn whatsapp-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" data-call class="float-btn call-btn" title="Call Now"><i class="fas fa-phone"></i></a>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
+<script src="script.js"></script>
+<script>
+  // Keep preview image in sync with selected colour
+  const originalSelectColor = selectColor;
+  selectColor = function(el, name, hex) {
+    originalSelectColor(el, name, hex);
+    const preview = document.getElementById('blazerPreview');
+    const label = name.replace(' ', '+');
+    preview.src = `https://placehold.co/700x900/${hex.replace('#','')}/ffffff?text=${label}+Blazer`;
+  };
+</script>
+</body>
+</html>

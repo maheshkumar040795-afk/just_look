@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Just Look - Customize Your Style for tailoring, custom blazers and bulk uniform enquiries in Chennai.">
+<title>Contact Us | Just Look</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><div><span class="logo-text">Just Look<span>.</span></span><span class="logo-tag">Customize Your Style</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bulk-orders.html">Bulk Orders</a></li>
+      <li><a href="blazer-order.html">Order a Blazer</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Quote</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <h1>Get In Touch</h1>
+  <p>We're here to help with orders, enquiries and bulk quotations.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid-4" style="margin-bottom:60px;">
+      <div class="feature-card text-center" data-aos="fade-up">
+        <div class="feature-icon" style="margin:0 auto 16px;"><i class="fas fa-phone"></i></div>
+        <h3>Call Us</h3>
+        <p>63803 15297 / 98412 64341</p>
+      </div>
+      <div class="feature-card text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon" style="margin:0 auto 16px;"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>63803 15297 / 98412 64341</p>
+      </div>
+      <div class="feature-card text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon" style="margin:0 auto 16px;"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p>justlook.95516@gmail.com</p>
+      </div>
+      <div class="feature-card text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-icon" style="margin:0 auto 16px;"><i class="fas fa-clock"></i></div>
+        <h3>Business Hours</h3>
+        <p>Mon - Sat: 10 AM - 8:30 PM</p>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:50px;">
+      <form class="form-box" data-aos="fade-right" onsubmit="sendEnquiry(event)">
+        <h3 style="margin-bottom:20px;">Send Us a Message</h3>
+        <label>Your Name</label>
+        <input type="text" id="enquiryName" placeholder="Enter your name" required>
+        <label>Phone Number</label>
+        <input type="tel" id="enquiryPhone" placeholder="Enter your phone number" required>
+        <label>Interested In</label>
+        <select id="enquiryService">
+          <option value="">Select a service</option>
+          <option>School Uniforms</option>
+          <option>College Uniforms</option>
+          <option>Corporate Uniforms</option>
+          <option>Hotel Uniforms</option>
+          <option>Custom Blazer</option>
+          <option>Bulk Order</option>
+        </select>
+        <label>Message</label>
+        <textarea id="enquiryMsg" rows="4" placeholder="Tell us what you need"></textarea>
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center; border:none;"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+      </form>
+      <div data-aos="fade-left">
+        <div class="map-wrap" style="margin-bottom:24px;">
+          <iframe src="https://www.google.com/maps?q=Just+Look+-+Customize+Your+Style,13.0421828,80.1152066&z=17&output=embed" loading="lazy"></iframe>
+        </div>
+        <div class="info-row"><i class="fas fa-map-marker-alt"></i><div><h4>Address</h4><p>M.G.R. Nagar No:2, Kundrathur Main Rd, Astha Lakshmi Nagar, Murugapillai Nagar, Kumananchavadi, Chennai, Kattuppakkam, Tamil Nadu 600056</p></div></div>
+        <div class="info-row"><i class="fas fa-clock"></i><div><h4>Business Hours</h4><p>Monday - Saturday: 10:00 AM - 8:30 PM<br>Sunday: Closed</p></div></div>
+        <a href="https://www.google.com/maps/place/Just+Look+-+Customize+Your+Style/@13.0421828,80.1152066,17z/data=!3m1!4b1!4m6!3m5!1s0x3a526120f73e1665:0x8970a8ce84268407!8m2!3d13.0421828!4d80.1152066!16s%2Fg%2F11ychzvq_g" target="_blank" class="btn-dark"><i class="fas fa-diamond-turn-right"></i> Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-text">Just Look<span style="color:var(--accent);">.</span></span>
+      <p>Premium tailoring & uniform specialists serving Chennai and Tamil Nadu with quality craftsmanship.</p>
+      <div class="social-links">
+        <a href="#" data-wa-generic target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="about.html">About Us</a></li></ul>
+    </div>
+    <div class="footer-links">
+      <h4>More</h4>
+      <ul><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-phone"></i> 63803 15297 / 98412 64341</p>
+      <p><i class="fas fa-map-marker-alt"></i> Kumananchavadi, Chennai - 600056</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>GSTIN: 33APOPA8381D3ZX &nbsp;|&nbsp; MSME Udhyam Certified &nbsp;|&nbsp; 25+ Years of Experience</p>
+    <p>&copy; 2026 Just Look - Customize Your Style. All rights reserved. | Designed by Mahesh Kumar</p>
+  </div>
+</footer>
+
+<div class="floating-buttons">
+  <a href="#" data-wa-generic class="float-btn whatsapp-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" data-call class="float-btn call-btn" title="Call Now"><i class="fas fa-phone"></i></a>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
+<script src="script.js"></script>
+</body>
+</html>
