@@ -5,8 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Read customer reviews and testimonials for Just Look - Customize Your Style, Chennai's trusted tailoring and uniform specialists.">
 <title>Customer Reviews | Just Look</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://placehold.co" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -87,10 +93,10 @@
       <h2 class="section-title">Fitting <span>Transformations</span></h2>
     </div>
     <div class="gallery-grid" data-aos="fade-up">
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Before+Fitting" alt="Before fitting"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=After+Fitting" alt="After fitting"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Customer+Photo" alt="Customer photo"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Customer+Photo" alt="Customer photo"></div>
+      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Before+Fitting" alt="Before fitting" width="400" height="300" decoding="async" loading="eager" fetchpriority="high"></div>
+      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=After+Fitting" alt="After fitting" width="400" height="300" decoding="async" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Customer+Photo" alt="Customer photo" width="400" height="300" decoding="async" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Customer+Photo" alt="Customer photo" width="400" height="300" decoding="async" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -135,7 +141,7 @@
   <a href="#" data-call class="float-btn call-btn" title="Call Now"><i class="fas fa-phone"></i></a>
 </div>
 
-<div class="lightbox" id="lightbox"><span class="lightbox-close">&times;</span><img id="lightboxImg" src="" alt="Preview"></div>
+<div class="lightbox" id="lightbox"><span class="lightbox-close">&times;</span><img id="lightboxImg" src="" alt="Preview" decoding="async" loading="lazy"></div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 800, once: true });</script>
