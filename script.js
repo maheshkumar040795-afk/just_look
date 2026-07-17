@@ -79,6 +79,21 @@ function sendBulkQuote(e) {
   window.open(waLink(text), '_blank');
 }
 
+/* ---- Wedding order form -> WhatsApp ---- */
+function sendWeddingOrder(e) {
+  if (e) e.preventDefault();
+  const name = document.getElementById('weddingName')?.value.trim();
+  const phone = document.getElementById('weddingPhone')?.value.trim();
+  const dressType = document.getElementById('weddingDressType')?.value;
+  const date = document.getElementById('weddingDate')?.value.trim();
+  const msg = document.getElementById('weddingMsg')?.value.trim();
+
+  if (!name || !phone || !dressType) { alert('Please fill in your name, phone number and select a dress type.'); return; }
+
+  const text = `Hello Just Look! I'd like to place a WEDDING ORDER.\n\nGroom Wedding Dress Type: ${dressType}\nWedding Date: ${date || '-'}\nName: ${name}\nPhone: ${phone}\nAdditional Details: ${msg || '-'}`;
+  window.open(waLink(text), '_blank');
+}
+
 /* ---- Blazer order builder ---- */
 let blazerState = { color: 'Navy Blue', hex: '#1b2a4a', size: '40', qty: 1 };
 

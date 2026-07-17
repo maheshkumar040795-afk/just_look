@@ -26,6 +26,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="bulk-orders.html">Bulk Orders</a></li>
       <li><a href="blazer-order.html" class="active">Order a Blazer</a></li>
+      <li><a href="wedding-order.html">Wedding Order</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -42,20 +43,35 @@
 </section>
 
 <section>
+  <style>
+    @media (max-width:768px){
+      .blazer-layout{ display:block !important; }
+      .blazer-layout > *{ margin-top:0 !important; margin-left:0 !important; position:static !important; transform:none !important; }
+      .blazer-preview{ height:auto !important; max-height:none !important; overflow:visible !important; margin-bottom:28px !important; }
+    }
+  </style>
   <div class="container">
     <div class="blazer-layout">
-      <div class="blazer-preview" data-aos="fade-right">
-        <img id="blazerPreview" src="https://placehold.co/700x900/1b2a4a/ffffff?text=Navy+Blue+Blazer" alt="Blazer preview" width="700" height="900" decoding="async" loading="eager" fetchpriority="high">
+      <div class="blazer-preview" data-aos="fade-right" style="width:100%;">
+        <div class="blazer-flip-wrap" id="blazerFlipWrap" style="position:relative; width:100%; padding-top:128.57%; perspective:1600px; border-radius:20px; overflow:hidden; box-shadow:0 20px 45px rgba(0,0,0,0.15); background:#eee;">
+          <div class="blazer-flip-inner" id="blazerFlipInner" style="position:absolute; inset:0; width:100%; height:100%; transform-style:preserve-3d; transition:transform 0.9s cubic-bezier(.4,.2,.2,1);">
+            <img class="blazer-face" id="blazerFront" src="https://res.cloudinary.com/dt97offnl/image/upload/v1784293053/WhatsApp_Image_2026-07-17_at_5.52.20_PM_hc3e8r.jpg" alt="Blazer front view" width="700" height="900" decoding="async" loading="eager" fetchpriority="high" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; backface-visibility:hidden;">
+            <img class="blazer-face" id="blazerBack" src="https://res.cloudinary.com/dt97offnl/image/upload/v1784293053/WhatsApp_Image_2026-07-17_at_5.52.25_PM_vhig8l.jpg" alt="Blazer back view" width="700" height="900" decoding="async" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; backface-visibility:hidden; transform:rotateY(180deg);">
+          </div>
+        </div>
       </div>
       <div data-aos="fade-left">
         <span class="eyebrow">Custom Blazer</span>
         <h2 class="section-title">Build Your <span>Blazer Order</span></h2>
-        <p class="section-subtitle" style="margin-bottom:30px;">Available in Black and Navy Blue. Select your options below.</p>
+        <p class="section-subtitle" style="margin-bottom:30px;">Available in 12 classic colours. Select your options below.</p>
 
-        <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:10px;">Colour</label>
-        <div class="color-options">
-          <div class="color-swatch active" style="background:#1b2a4a;" onclick="selectColor(this,'Navy Blue','#1b2a4a')" title="Navy Blue"></div>
-          <div class="color-swatch" style="background:#141414;" onclick="selectColor(this,'Black','#141414')" title="Black"></div>
+        <label for="colourSelect" style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:10px;">Colour</label>
+        <div class="color-select-row" style="display:flex; align-items:center; gap:12px; margin-bottom:22px;">
+          <span id="colorSwatchPreview" style="width:32px; height:32px; border-radius:50%; background:#1b2a4a; border:2px solid var(--border); flex-shrink:0;"></span>
+          <select id="colourSelect" onchange="selectColorFromDropdown(this)" style="flex:1; padding:14px 16px; border:1px solid var(--border); border-radius:10px; font-family:inherit; font-size:0.95rem;">
+            <option value="Navy Blue|#1b2a4a" selected>Navy Blue</option>
+            <option value="Black|#141414">Black</option>
+          </select>
         </div>
 
         <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:10px;">Size</label>
@@ -75,7 +91,7 @@
           <button type="button" onclick="changeQty(1)">+</button>
         </div>
 
-        <div class="order-summary" id="orderSummary">Colour: <strong>Navy Blue</strong> &nbsp;|&nbsp; Size: <strong>36</strong> &nbsp;|&nbsp; Qty: <strong>1</strong></div>
+        <div class="order-summary" id="orderSummary">Colour: <strong id="summaryColor">Navy Blue</strong> &nbsp;|&nbsp; Size: <strong>36</strong> &nbsp;|&nbsp; Qty: <strong>1</strong></div>
 
         <form onsubmit="orderBlazerOnWhatsApp(event)">
           <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:6px;">Your Name</label>
@@ -117,7 +133,7 @@
     </div>
     <div class="footer-links">
       <h4>Quick Links</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="about.html">About Us</a></li></ul>
+      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="wedding-order.html">Wedding Order</a></li><li><a href="about.html">About Us</a></li></ul>
     </div>
     <div class="footer-links">
       <h4>More</h4>
@@ -144,14 +160,65 @@
 <script>AOS.init({ duration: 800, once: true });</script>
 <script src="script.js"></script>
 <script>
-  // Keep preview image in sync with selected colour
-  const originalSelectColor = selectColor;
+  const REAL_FRONT_URL = 'https://res.cloudinary.com/dt97offnl/image/upload/v1784293053/WhatsApp_Image_2026-07-17_at_5.52.20_PM_hc3e8r.jpg';
+  const REAL_BACK_URL  = 'https://res.cloudinary.com/dt97offnl/image/upload/v1784293053/WhatsApp_Image_2026-07-17_at_5.52.25_PM_vhig8l.jpg';
+  let blazerFlipInterval = null;
+
+  // Auto-flip the preview between front and back every 2.5s
+  function startBlazerFlip() {
+    clearInterval(blazerFlipInterval);
+    const inner = document.getElementById('blazerFlipInner');
+    if (!inner) return;
+    inner.style.transform = 'rotateY(0deg)';
+    let flipped = false;
+    blazerFlipInterval = setInterval(() => {
+      flipped = !flipped;
+      inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+    }, 2500);
+  }
+
+  // Update the preview images to match the selected colour
+  function setBlazerPreviewForColor(name, hex) {
+    const front = document.getElementById('blazerFront');
+    const back = document.getElementById('blazerBack');
+    const inner = document.getElementById('blazerFlipInner');
+    if (!front || !back || !inner) return;
+
+    if (name === 'Navy Blue') {
+      front.src = REAL_FRONT_URL;
+      back.src = REAL_BACK_URL;
+      startBlazerFlip();
+    } else {
+      // No real front/back photos for this colour yet — show a static placeholder
+      clearInterval(blazerFlipInterval);
+      inner.style.transform = 'rotateY(0deg)';
+      const label = name.replace(/ /g, '+');
+      const placeholder = `https://placehold.co/700x900/${hex.replace('#', '')}/ffffff?text=${label}+Blazer`;
+      front.src = placeholder;
+      back.src = placeholder;
+    }
+  }
+
+  // Keep preview in sync with selected colour
+  const originalSelectColor = typeof selectColor === 'function' ? selectColor : function(){};
   selectColor = function(el, name, hex) {
     originalSelectColor(el, name, hex);
-    const preview = document.getElementById('blazerPreview');
-    const label = name.replace(' ', '+');
-    preview.src = `https://placehold.co/700x900/${hex.replace('#','')}/ffffff?text=${label}+Blazer`;
+    const summaryColor = document.getElementById('summaryColor');
+    if (summaryColor) summaryColor.textContent = name;
+    setBlazerPreviewForColor(name, hex);
   };
+
+  // Handle the colour dropdown (Navy Blue / Black)
+  function selectColorFromDropdown(select) {
+    const [name, hex] = select.value.split('|');
+    const swatch = document.getElementById('colorSwatchPreview');
+    if (swatch) swatch.style.background = hex;
+    const fakeEl = document.createElement('div');
+    selectColor(fakeEl, name, hex);
+  }
+
+  // Start the flip animation on page load (default colour is Navy Blue)
+  document.addEventListener('DOMContentLoaded', startBlazerFlip);
 </script>
 </body>
 </html>

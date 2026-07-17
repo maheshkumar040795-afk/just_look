@@ -26,6 +26,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="bulk-orders.html" class="active">Bulk Orders</a></li>
       <li><a href="blazer-order.html">Order a Blazer</a></li>
+      <li><a href="wedding-order.html">Wedding Order</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -60,6 +61,68 @@
   </div>
 </section>
 
+<!-- BULK QUOTE FORM -->
+<section id="bulk-form">
+  <style>
+    .bulk-form-layout{ display:grid; grid-template-columns:1fr 1.2fr; gap:40px; align-items:start; }
+    @media (max-width:768px){
+      .bulk-form-layout{ grid-template-columns:1fr; }
+      .bulk-photo-card{ max-width:420px; margin:0 auto 10px; }
+    }
+  </style>
+  <div class="container" style="max-width:1100px;">
+    <div class="section-head center">
+      <span class="eyebrow">Request a Quote</span>
+      <h2 class="section-title">Get Your <span>Bulk Quotation</span></h2>
+      <p class="section-subtitle">Fill in your requirement and we'll send pricing on WhatsApp.</p>
+    </div>
+    <div class="bulk-form-layout">
+      <div class="bulk-photo-card" data-aos="fade-right" style="width:100%;">
+        <div class="bulk-flip-wrap" id="bulkFlipWrap" style="position:relative; width:100%; padding-top:128.57%; perspective:1600px; border-radius:20px; overflow:hidden; box-shadow:0 20px 45px rgba(0,0,0,0.15); background:#eee;">
+          <div class="bulk-flip-inner" id="bulkFlipInner" style="position:absolute; inset:0; width:100%; height:100%; transform-style:preserve-3d; transition:transform 0.9s cubic-bezier(.4,.2,.2,1);">
+            <img class="bulk-face" src="https://res.cloudinary.com/dt97offnl/image/upload/v1784293817/Front_uniform_aobrkm.jpg" alt="Bulk uniform front view" width="700" height="900" decoding="async" loading="eager" fetchpriority="high" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; backface-visibility:hidden;">
+            <img class="bulk-face" src="https://res.cloudinary.com/dt97offnl/image/upload/v1784293817/Back_Uniform_wgstzu.jpg" alt="Bulk uniform back view" width="700" height="900" decoding="async" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; backface-visibility:hidden; transform:rotateY(180deg);">
+          </div>
+        </div>
+      </div>
+      <form class="form-box" data-aos="fade-up" onsubmit="sendBulkQuote(event)">
+        <label>Organisation / School / Company Name</label>
+        <input type="text" id="bulkOrg" placeholder="e.g. St. Xavier's School" required>
+        <div class="form-row">
+          <div>
+            <label>Uniform Type</label>
+            <select id="bulkType">
+              <option value="">Select type</option>
+              <option>School Uniforms</option>
+              <option>College Uniforms</option>
+              <option>Corporate Uniforms</option>
+              <option>Hotel Uniforms</option>
+              <option>Hospital / Scrubs</option>
+              <option>Security Uniforms</option>
+              <option>Event Staff Uniforms</option>
+            </select>
+          </div>
+          <div>
+            <label>Approx. Quantity</label>
+            <input type="text" id="bulkQty" placeholder="e.g. 150 pieces">
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label>Your Name</label>
+            <input type="text" id="bulkName" placeholder="Contact person" required>
+          </div>
+          <div>
+            <label>Phone Number</label>
+            <input type="tel" id="bulkPhone" placeholder="Your phone number" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center; border:none;"><i class="fab fa-whatsapp"></i> Get Bulk Quotation</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section class="bg-alt">
   <div class="container">
     <div class="section-head center">
@@ -76,70 +139,6 @@
       <div class="feature-card" data-aos="fade-up" data-aos-delay="200"><div class="feature-icon"><i class="fas fa-hashtag"></i></div><h3>Minimum Order Quantity</h3><p>Starting from 30 pieces per style — ask for details.</p></div>
       <div class="feature-card" data-aos="fade-up" data-aos-delay="300"><div class="feature-icon"><i class="fas fa-truck-fast"></i></div><h3>Delivery Across Tamil Nadu</h3><p>Reliable dispatch to your location.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- FABRIC BRANDS -->
-<section>
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">Trusted Sourcing</span>
-      <h2 class="section-title">Our <span>Fabric Brands</span></h2>
-      <p class="section-subtitle">Bulk uniforms are only as good as the fabric behind them. We source from India's leading mills for durability, comfort and consistent quality across every batch.</p>
-    </div>
-    <div class="brand-grid" data-aos="fade-up">
-      <div class="brand-chip"><span class="b-name">Sangam (India) Limited</span><span class="b-tag">Value Through Values</span></div>
-      <div class="brand-chip"><span class="b-name">Mafatlal</span><span class="b-tag">Arvind Mafatlal Group</span></div>
-      <div class="brand-chip"><span class="b-name">S.Kumars</span><span class="b-tag">The Fabric of India</span></div>
-      <div class="brand-chip"><span class="b-name">Wocky Tocky</span><span class="b-tag">School & Work Wear Uniforms</span></div>
-      <div class="brand-chip"><span class="b-name">Raymond</span><span class="b-tag">Fine Fabrics, Since 1925</span></div>
-      <div class="brand-chip"><span class="b-name">Darshan Valji</span><span class="b-tag">India's Uniform Experts</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- BULK QUOTE FORM -->
-<section id="bulk-form">
-  <div class="container" style="max-width:760px;">
-    <div class="section-head center">
-      <span class="eyebrow">Request a Quote</span>
-      <h2 class="section-title">Get Your <span>Bulk Quotation</span></h2>
-      <p class="section-subtitle">Fill in your requirement and we'll send pricing on WhatsApp.</p>
-    </div>
-    <form class="form-box" data-aos="fade-up" onsubmit="sendBulkQuote(event)">
-      <label>Organisation / School / Company Name</label>
-      <input type="text" id="bulkOrg" placeholder="e.g. St. Xavier's School" required>
-      <div class="form-row">
-        <div>
-          <label>Uniform Type</label>
-          <select id="bulkType">
-            <option value="">Select type</option>
-            <option>School Uniforms</option>
-            <option>College Uniforms</option>
-            <option>Corporate Uniforms</option>
-            <option>Hotel Uniforms</option>
-            <option>Hospital / Scrubs</option>
-            <option>Security Uniforms</option>
-            <option>Event Staff Uniforms</option>
-          </select>
-        </div>
-        <div>
-          <label>Approx. Quantity</label>
-          <input type="text" id="bulkQty" placeholder="e.g. 150 pieces">
-        </div>
-      </div>
-      <div class="form-row">
-        <div>
-          <label>Your Name</label>
-          <input type="text" id="bulkName" placeholder="Contact person" required>
-        </div>
-        <div>
-          <label>Phone Number</label>
-          <input type="tel" id="bulkPhone" placeholder="Your phone number" required>
-        </div>
-      </div>
-      <button type="submit" class="btn-primary" style="width:100%; justify-content:center; border:none;"><i class="fab fa-whatsapp"></i> Get Bulk Quotation</button>
-    </form>
   </div>
 </section>
 
@@ -188,7 +187,8 @@
     </div>
     <div class="footer-links">
       <h4>Quick Links</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="about.html">About Us</a></li></ul>
+      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li>
+      <li><a href="wedding-order.html">Wedding Order</a></li><li><a href="about.html">About Us</a></li></ul>
     </div>
     <div class="footer-links">
       <h4>More</h4>
@@ -214,5 +214,17 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 800, once: true });</script>
 <script src="script.js"></script>
+<script>
+  // Auto-flip the bulk uniform photo between front and back every 2s
+  (function () {
+    const inner = document.getElementById('bulkFlipInner');
+    if (!inner) return;
+    let flipped = false;
+    setInterval(() => {
+      flipped = !flipped;
+      inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+    }, 2000);
+  })();
+</script>
 </body>
 </html>

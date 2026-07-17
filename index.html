@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior:smooth;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,22 +16,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.nav-cta{background:var(--accent, #d62828) !important; color:#fff !important; border-radius:8px !important; border:none !important;}
+.nav-cta:hover{background:#b71f1f !important;}
+</style>
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
-    <a href="index.html" class="logo">
-      <div>
-        <span class="logo-text">Just Look<span>.</span></span>
-        <span class="logo-tag">Customize Your Style</span>
+    <a href="index.html" class="logo" style="display:flex; align-items:center; gap:10px; line-height:normal;">
+      <img src="images/logo.png" alt="Just Look logo" style="display:block; width:42px; height:42px; min-width:42px; border-radius:50%; object-fit:cover; flex-shrink:0;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <span class="logo-text" style="white-space:nowrap;">Just Look<span style="color:var(--accent);">.</span></span>
+        <span class="logo-tag" style="color:var(--accent);">Customize Your Style</span>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="bulk-orders.html">Bulk Orders</a></li>
       <li><a href="blazer-order.html">Order a Blazer</a></li>
+      <li><a href="wedding-order.html">Wedding Order</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -42,23 +48,94 @@
 </nav>
 
 <!-- HERO -->
-<section style="padding:150px 20px 90px; background:var(--dark); color:#fff; position:relative; overflow:hidden;">
-  <div style="position:absolute; top:-100px; right:-100px; width:340px; height:340px; background:var(--accent); border-radius:50%; opacity:0.15;"></div>
-  <div class="container hero-grid">
+<section style="padding:150px 20px 90px; background:#ffffff; color:#1a1a1a; position:relative; overflow:hidden;">
+  <div style="position:absolute; top:-100px; right:-100px; width:340px; height:340px; background:var(--accent); border-radius:50%; opacity:0.12;"></div>
+  <img src="images/suited-man-watermark.png" alt="" aria-hidden="true" style="position:absolute; left:-40px; bottom:-30px; width:380px; max-width:60%; opacity:0.22; filter:grayscale(100%); pointer-events:none; user-select:none; z-index:0;">
+  <div class="container hero-grid" style="position:relative; z-index:1;">
     <div data-aos="fade-right">
       <span class="badge">⭐ 5/5 on Google Reviews</span>
-      <h1 style="font-size:clamp(2.2rem,5vw,3.4rem); margin:18px 0 16px; line-height:1.15;">Premium Tailoring & <span style="color:var(--accent);">Uniform Specialists</span></h1>
-      <p style="color:rgba(255,255,255,0.7); font-size:1.1rem; max-width:520px; margin-bottom:32px;">Bulk uniforms for schools, colleges, corporates & hotels — plus custom blazers, shirts and pants, perfectly fitted every time.</p>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.4rem); margin:18px 0 16px; line-height:1.15; color:#1a1a1a;">Premium Tailoring & <span style="color:var(--accent);">Uniform Specialists</span></h1>
+      <p style="color:rgba(0,0,0,0.65); font-size:1.1rem; max-width:520px; margin-bottom:32px;">Bulk uniforms for schools, colleges, corporates & hotels — plus custom blazers, shirts and pants, perfectly fitted every time.</p>
       <div style="display:flex; flex-wrap:wrap; gap:16px;">
         <a href="#" data-wa-generic class="btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Get Quote on WhatsApp</a>
-        <a href="#" data-call class="btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+        <a href="#" data-call class="btn-outline" style="border-color:rgba(0,0,0,0.25); color:#1a1a1a;"><i class="fas fa-phone"></i> Call Now</a>
       </div>
-      <div style="display:flex; gap:16px; margin-top:16px;">
-        <a href="#location" class="btn-outline" style="border-color:rgba(255,255,255,0.3);"><i class="fas fa-map-marker-alt"></i> View Location</a>
+      <div style="display:flex; gap:16px; margin-top:16px; flex-wrap:wrap;">
+        <a href="#location" class="btn-outline" style="border-color:rgba(0,0,0,0.25); color:#1a1a1a;"><i class="fas fa-map-marker-alt"></i> View Location</a>
+        <a href="#contact" class="btn-outline" style="border-color:rgba(0,0,0,0.25); color:#1a1a1a;"><i class="fas fa-pen-to-square"></i> Enquiry</a>
       </div>
     </div>
-    <div data-aos="fade-left" style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
-      <img src="https://placehold.co/700x560/1a1a1a/d81324?text=Blazer+%26+Uniform+Hero+Photo" alt="Just Look tailoring hero" width="700" height="560" decoding="async" loading="eager" fetchpriority="high">
+    <div id="heroBookWrap" data-aos="fade-left" style="position:relative; border-radius:20px 8px 8px 20px; overflow:hidden; border:1px solid rgba(0,0,0,0.1); box-shadow:5px 5px 0 -1px #eeeeee, 5px 5px 0 0 rgba(0,0,0,0.04), 10px 10px 0 -2px #e0e0e0, 10px 10px 0 -1px rgba(0,0,0,0.04), 10px 10px 18px 2px rgba(0,0,0,0.18);">
+      <style>
+        #heroBookWrap::after { content:''; position:absolute; top:8px; bottom:8px; right:0; width:9px; background:repeating-linear-gradient(180deg, #f6f2e9 0px, #f6f2e9 2px, #e3ddcd 2px, #e3ddcd 4px); box-shadow:inset -2px 0 4px rgba(0,0,0,0.2); z-index:8; pointer-events:none; }
+        #heroFlipStage { position:relative; width:100%; height:100%; aspect-ratio:700/560; perspective:1300px; background:#f7f7f7; }
+        #heroFlipStage .flip-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#f7f7f7; display:block; backface-visibility:hidden; transform-origin:left center; transform:rotateY(0deg); box-shadow:0 0 24px rgba(0,0,0,0.12); border-right:1px solid rgba(0,0,0,0.06); }
+        #heroFlipStage .flip-slide::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.18) 8%, rgba(0,0,0,0) 26%, rgba(0,0,0,0) 74%, rgba(0,0,0,0.3) 100%); opacity:0; pointer-events:none; }
+        #heroFlipStage .flip-slide::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0) 62%, rgba(255,255,255,0) 100%); opacity:0; pointer-events:none; mix-blend-mode:soft-light; }
+        #heroFlipStage .flip-slide.js-flipping { animation: heroPageTurn 1.15s cubic-bezier(.45,.05,.35,1) forwards; }
+        #heroFlipStage .flip-slide.js-flipping::after { animation: heroPageShade 1.15s linear forwards; }
+        #heroFlipStage .flip-slide.js-flipping::before { animation: heroPageShine 1.15s linear forwards; }
+        #heroFlipStage .spine-shadow { content:''; position:absolute; left:0; top:0; bottom:0; width:36px; background:linear-gradient(90deg, rgba(0,0,0,0.28), rgba(0,0,0,0)); z-index:6; pointer-events:none; }
+        #heroFlipStage .inner-shadow { content:''; position:absolute; inset:0; box-shadow:inset 0 0 40px rgba(0,0,0,0.1); z-index:6; pointer-events:none; }
+        @keyframes heroPageTurn { from { transform:rotateY(0deg); } to { transform:rotateY(-180deg); } }
+        @keyframes heroPageShade { 0%{opacity:0;} 42%{opacity:1;} 58%{opacity:1;} 100%{opacity:0;} }
+        @keyframes heroPageShine { 0%{opacity:0;} 38%{opacity:0;} 50%{opacity:0.9;} 62%{opacity:0;} 100%{opacity:0;} }
+        @media (max-width:640px) {
+          #heroFlipStage { aspect-ratio:4/5; }
+        }
+        @media (max-width:420px) {
+          #heroFlipStage { aspect-ratio:3/4; }
+        }
+      </style>
+      <div id="heroFlipStage">
+        <div class="flip-slide" style="z-index:5; background:linear-gradient(135deg, #141414 0%, #1c1c1c 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:16px; box-sizing:border-box; color:#fff; text-align:center; overflow:hidden;">
+          <div style="position:absolute; top:-70px; right:-70px; width:200px; height:200px; background:var(--accent); opacity:0.16; border-radius:50%;"></div>
+          <div style="position:absolute; bottom:-60px; left:-60px; width:160px; height:160px; background:var(--accent); opacity:0.1; border-radius:50%;"></div>
+          <span style="position:relative; font-family:'Playfair Display', serif; font-size:clamp(1.1rem,3.2vw,1.7rem); font-weight:700; letter-spacing:0.5px; line-height:1;">Just Look<span style="color:var(--accent);">.</span></span>
+          <span style="position:relative; font-size:0.55rem; letter-spacing:2.5px; color:rgba(255,255,255,0.55); margin-top:4px; text-transform:uppercase;">Customize Your Style</span>
+          <span style="position:relative; display:inline-block; margin:8px 0 10px; padding:4px 12px; border:1px solid rgba(255,255,255,0.25); border-radius:20px; font-size:0.62rem; letter-spacing:1px; color:var(--accent); text-transform:uppercase; font-weight:600;">Style Lookbook</span>
+          <div style="position:relative; display:grid; grid-template-columns:1fr 1fr; gap:6px; width:100%; max-width:230px;">
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1; border:1px solid rgba(255,255,255,0.12);"><img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784267085/BL5466-BKPL_2_mojyja.webp" alt="Look 1" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1; border:1px solid rgba(255,255,255,0.12);"><img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784277386/Gemini_Generated_Image_fr2k9bfr2k9bfr2k_m7gvyy.png" alt="Look 2" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1; border:1px solid rgba(255,255,255,0.12);"><img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784277380/il_570xN.6675612759_tknp_opjtrh.webp" alt="Look 3" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1; border:1px solid rgba(255,255,255,0.12);"><img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784277385/Gemini_Generated_Image_50774f50774f5077_hzj6no.png" alt="Look 4" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+          </div>
+          <span style="position:relative; margin-top:8px; font-size:0.65rem; color:rgba(255,255,255,0.5);">Flip through our latest styles →</span>
+        </div>
+        <img class="flip-slide" src="https://res.cloudinary.com/dt97offnl/image/upload/v1784267085/BL5466-BKPL_2_mojyja.webp" alt="Just Look tailoring hero 1" style="z-index:4;">
+        <img class="flip-slide" src="https://res.cloudinary.com/dt97offnl/image/upload/v1784277386/Gemini_Generated_Image_fr2k9bfr2k9bfr2k_m7gvyy.png" alt="Just Look tailoring hero 2" style="z-index:3;">
+        <img class="flip-slide" src="https://res.cloudinary.com/dt97offnl/image/upload/v1784277380/il_570xN.6675612759_tknp_opjtrh.webp" alt="Just Look tailoring hero 3" style="z-index:2;">
+        <img class="flip-slide" src="https://res.cloudinary.com/dt97offnl/image/upload/v1784277385/Gemini_Generated_Image_50774f50774f5077_hzj6no.png" alt="Just Look tailoring hero 4" style="z-index:1;">
+        <div class="spine-shadow"></div>
+        <div class="inner-shadow"></div>
+      </div>
+      <script>
+        (function(){
+          var stage = document.getElementById('heroFlipStage');
+          var slides = Array.prototype.slice.call(stage.querySelectorAll('.flip-slide'));
+          var order = [0,1,2,3,4];
+          function applyZ(){
+            order.forEach(function(idx, pos){
+              slides[idx].style.zIndex = order.length - pos;
+            });
+          }
+          function flip(){
+            var frontIdx = order[0];
+            var frontEl = slides[frontIdx];
+            function onEnd(e){
+              if (e.target !== frontEl) return;
+              frontEl.removeEventListener('animationend', onEnd);
+              frontEl.classList.remove('js-flipping');
+              order.push(order.shift());
+              applyZ();
+            }
+            frontEl.addEventListener('animationend', onEnd);
+            frontEl.classList.add('js-flipping');
+          }
+          applyZ();
+          setInterval(flip, 3500);
+        })();
+      </script>
     </div>
   </div>
 </section>
@@ -69,6 +146,7 @@
     <div class="trust-item"><i class="fas fa-file-invoice"></i><div class="t-text"><span class="t-value">GSTIN: 33APOPA8381D3ZX</span><span class="t-label">Registered Business</span></div></div>
     <div class="trust-item"><i class="fas fa-certificate"></i><div class="t-text"><span class="t-value">MSME Udhyam Certified</span><span class="t-label">Govt. Recognised</span></div></div>
     <div class="trust-item"><i class="fas fa-award"></i><div class="t-text"><span class="t-value">25+ Years of Experience</span><span class="t-label">Trusted Craftsmanship</span></div></div>
+    <div class="trust-item"><i class="fas fa-store"></i><div class="t-text"><span class="t-value">Shop Established 2016</span><span class="t-label">Since 2016</span></div></div>
   </div>
 </div>
 
@@ -135,7 +213,7 @@
     </div>
     <div class="grid-4">
       <div class="product-card" data-aos="fade-up">
-        <img src="https://placehold.co/400x300/0a0a0a/ffffff?text=School+Uniforms" alt="School Uniforms" width="400" height="300" decoding="async" loading="lazy">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784267363/Screenshot_2026-07-17_111907_vi6tru.png" alt="School Uniforms" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:300px; object-fit:cover;">
         <div class="product-body">
           <h3>School Uniforms</h3>
           <p>Durable, comfortable daily-wear uniforms for students.</p>
@@ -143,7 +221,7 @@
         </div>
       </div>
       <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://placehold.co/400x300/0a0a0a/ffffff?text=College+Uniforms" alt="College Uniforms" width="400" height="300" decoding="async" loading="lazy">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784267637/Screenshot_2026-07-17_112339_t2k8i0.png" alt="College Uniforms" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:300px; object-fit:cover;">
         <div class="product-body">
           <h3>College Uniforms</h3>
           <p>Smart, consistent uniforms for college identity.</p>
@@ -151,7 +229,7 @@
         </div>
       </div>
       <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://placehold.co/400x300/0a0a0a/ffffff?text=Corporate+Uniforms" alt="Corporate Uniforms" width="400" height="300" decoding="async" loading="lazy">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784268021/Screenshot_2026-07-17_113003_emh2p0.png" alt="Corporate Uniforms" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:300px; object-fit:cover;">
         <div class="product-body">
           <h3>Corporate Uniforms</h3>
           <p>Professional attire that reflects your brand.</p>
@@ -159,7 +237,7 @@
         </div>
       </div>
       <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-        <img src="https://placehold.co/400x300/0a0a0a/ffffff?text=Hotel+Uniforms" alt="Hotel Uniforms" width="400" height="300" decoding="async" loading="lazy">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784268275/hotel_uniform_m3hwje.jpg" alt="Hotel Uniforms" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:300px; object-fit:cover;">
         <div class="product-body">
           <h3>Hotel Uniforms</h3>
           <p>Elegant, hardwearing uniforms for hospitality staff.</p>
@@ -167,7 +245,7 @@
         </div>
       </div>
       <div class="product-card" data-aos="fade-up">
-        <img src="https://placehold.co/400x300/1a1a1a/d81324?text=Custom+Blazers" alt="Custom Blazers" width="400" height="300" decoding="async" loading="lazy">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784268867/Custom_Blazer_znz12f.jpg" alt="Custom Blazers" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:300px; object-fit:cover;">
         <div class="product-body">
           <h3>Custom Blazers</h3>
           <p>Black & Navy Blue, tailored to size. Order online.</p>
@@ -175,7 +253,7 @@
         </div>
       </div>
       <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://placehold.co/400x300/0a0a0a/ffffff?text=Formal+Shirts" alt="Formal Shirts" width="400" height="300" decoding="async" loading="lazy">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784268866/formal_shit_n4il6g.jpg" alt="Formal Shirts" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:300px; object-fit:cover;">
         <div class="product-body">
           <h3>Formal Shirts</h3>
           <p>Crisp, well-fitted shirts for work and school.</p>
@@ -183,7 +261,7 @@
         </div>
       </div>
       <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://placehold.co/400x300/0a0a0a/ffffff?text=Formal+Pants" alt="Formal Pants" width="400" height="300" decoding="async" loading="lazy">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784268866/Formal_Pant_luulbi.jpg" alt="Formal Pants" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:300px; object-fit:cover;">
         <div class="product-body">
           <h3>Formal Pants</h3>
           <p>Tailored pants with a clean, structured fit.</p>
@@ -191,7 +269,7 @@
         </div>
       </div>
       <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-        <img src="https://placehold.co/400x300/0a0a0a/ffffff?text=Graduation+Blazers" alt="Graduation Blazers" width="400" height="300" decoding="async" loading="lazy">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784268865/Graduation_blazer_m252vh.avif" alt="Graduation Blazers" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:300px; object-fit:cover;">
         <div class="product-body">
           <h3>Graduation Blazers</h3>
           <p>Special-occasion blazers for graduation ceremonies.</p>
@@ -210,47 +288,35 @@
       <h2 class="section-title">Our <span>Fabric Brands</span></h2>
       <p class="section-subtitle">We source fabric only from India's most trusted mills, so every uniform and blazer holds its shape, colour and comfort — wash after wash.</p>
     </div>
+    <style>
+      .brand-chip .b-logo-wrap{ display:flex; align-items:center; justify-content:center; height:48px; margin-bottom:14px; }
+      .brand-chip .b-logo{ max-height:44px; max-width:140px; width:auto; height:auto; object-fit:contain; filter:grayscale(15%); }
+      .brand-chip .b-logo-fallback{ display:none; align-items:center; justify-content:center; height:48px; margin-bottom:14px; font-family:'Playfair Display', serif; font-weight:700; font-size:1.1rem; color:var(--accent); }
+    </style>
     <div class="brand-grid" data-aos="fade-up">
-      <div class="brand-chip"><span class="b-name">Sangam (India) Limited</span><span class="b-tag">Value Through Values</span></div>
-      <div class="brand-chip"><span class="b-name">Mafatlal</span><span class="b-tag">Arvind Mafatlal Group</span></div>
-      <div class="brand-chip"><span class="b-name">S.Kumars</span><span class="b-tag">The Fabric of India</span></div>
-      <div class="brand-chip"><span class="b-name">Wocky Tocky</span><span class="b-tag">School & Work Wear Uniforms</span></div>
-      <div class="brand-chip"><span class="b-name">Raymond</span><span class="b-tag">Fine Fabrics, Since 1925</span></div>
-      <div class="brand-chip"><span class="b-name">Darshan Valji</span><span class="b-tag">India's Uniform Experts</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- GOOGLE REVIEWS -->
-<section>
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">Trusted & Loved</span>
-      <h2 class="section-title">What Our <span>Customers Say</span></h2>
-    </div>
-    <div class="rating-banner" data-aos="zoom-in">
-      <div class="rating-score">
-        <div class="num">5.0</div>
-        <div class="stars">★★★★★</div>
-        <div class="count">Based on 180+ Google Reviews</div>
+      <div class="brand-chip">
+        <div class="b-logo-wrap"><img class="b-logo" src="https://logo.clearbit.com/sangamgroup.com?size=160" alt="Sangam (India) Limited logo" loading="lazy" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"><div class="b-logo-fallback" style="display:none;">Sangam</div></div>
+        <span class="b-name">Sangam (India) Limited</span><span class="b-tag">Value Through Values</span>
       </div>
-      <a href="https://www.google.com/search?q=just+look+kumananchavadi&rlz=1C1RXQR_en-GBIN1074IN1074#sv=CAESzQEKuQEStgEKd0FKaVQ0dEpWWnJUQ001clFjODhPVHhxTXY5ZnV3LV9BZFR1bmVOYklQN1NhX1lnc0Y1eDNoX0ljeXMwZEtja3ZfZHdfQTdlYmF4NnRpeFZMLWhELU1fY0JTcXlJOVZndkN1RVFqX2ZlWTYzQlF4TzBfN2tLVlJ3EhczNFZVYXZ5eEZiZVRzZU1QdnF5RW9BURoiQURzcjlmVHNyRHhRa19icTlnOXViMl9FbEtrNVB3SEo3QRIEODA1MRoBMyoAMAA4AUAAGAAgj6LQ0wRKAhAC" target="_blank" class="btn-dark">Read More Reviews on Google</a>
-    </div>
-    <div class="grid-3">
-      <div class="review-card" data-aos="fade-up">
-        <div class="stars">★★★★★</div>
-        <p>"Ordered 60 blazers for our school event, delivered on time with perfect fitting for every student."</p>
-        <div class="review-author"><div class="review-avatar">R</div><div><h4>Ravi Kumar</h4><span>School Coordinator</span></div></div>
+      <div class="brand-chip">
+        <div class="b-logo-wrap"><img class="b-logo" src="https://logo.clearbit.com/mafatlals.com?size=160" alt="Mafatlal logo" loading="lazy" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"><div class="b-logo-fallback" style="display:none;">Mafatlal</div></div>
+        <span class="b-name">Mafatlal</span><span class="b-tag">Arvind Mafatlal Group</span>
       </div>
-      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="stars">★★★★★</div>
-        <p>"Great quality fabric and quick turnaround for our corporate uniform order. Highly recommended."</p>
-        <div class="review-author"><div class="review-avatar">P</div><div><h4>Priya S.</h4><span>HR Manager</span></div></div>
+      <div class="brand-chip">
+        <div class="b-logo-wrap"><img class="b-logo" src="https://logo.clearbit.com/skumars.co.in?size=160" alt="S.Kumars logo" loading="lazy" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"><div class="b-logo-fallback" style="display:none;">S.Kumars</div></div>
+        <span class="b-name">S.Kumars</span><span class="b-tag">The Fabric of India</span>
       </div>
-      <div class="review-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="stars">★★★★★</div>
-        <p>"My custom blazer fit perfectly on the first try. Excellent tailoring and friendly service."</p>
-        <div class="review-author"><div class="review-avatar">A</div><div><h4>Arun M.</h4><span>Regular Customer</span></div></div>
+      <div class="brand-chip">
+        <div class="b-logo-wrap"><img class="b-logo" src="https://logo.clearbit.com/wockytocky.com?size=160" alt="Wocky Tocky logo" loading="lazy" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"><div class="b-logo-fallback" style="display:none;">Wocky Tocky</div></div>
+        <span class="b-name">Wocky Tocky</span><span class="b-tag">School & Work Wear Uniforms</span>
+      </div>
+      <div class="brand-chip">
+        <div class="b-logo-wrap"><img class="b-logo" src="https://logo.clearbit.com/raymond.in?size=160" alt="Raymond logo" loading="lazy" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"><div class="b-logo-fallback" style="display:none;">Raymond</div></div>
+        <span class="b-name">Raymond</span><span class="b-tag">Fine Fabrics, Since 1925</span>
+      </div>
+      <div class="brand-chip">
+        <div class="b-logo-wrap"><img class="b-logo" src="https://logo.clearbit.com/darshanvalji.com?size=160" alt="Darshan Valji logo" loading="lazy" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"><div class="b-logo-fallback" style="display:none;">Darshan Valji</div></div>
+        <span class="b-name">Darshan Valji</span><span class="b-tag">India's Uniform Experts</span>
       </div>
     </div>
   </div>
@@ -265,14 +331,38 @@
       <p class="section-subtitle">Real fittings, real orders, real customers.</p>
     </div>
     <div class="gallery-grid" data-aos="fade-up">
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Blazer+Fitting" alt="Blazer fitting" width="400" height="300" decoding="async" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=School+Order" alt="School uniform bulk order" width="400" height="300" decoding="async" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Corporate+Order" alt="Corporate uniform order" width="400" height="300" decoding="async" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Bulk+Stitching" alt="Bulk stitching" width="400" height="300" decoding="async" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Store+Front" alt="Store photo" width="400" height="300" decoding="async" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Fabric+Selection" alt="Fabric selection" width="400" height="300" decoding="async" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Finished+Blazers" alt="Finished blazers" width="400" height="300" decoding="async" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://placehold.co/400x300/141414/ffffff?text=Team+at+Work" alt="Tailoring team at work" width="400" height="300" decoding="async" loading="lazy"></div>
+      <div class="gallery-item" style="position:relative;">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784270213/Blazer_Fitting_khsvbz.jpg" alt="Blazer fitting" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0)); color:#fff; font-size:0.9rem; font-weight:600;">Blazer Fitting</span>
+      </div>
+      <div class="gallery-item" style="position:relative;">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784270248/Screenshot_2026-07-17_120353_nwih0v.png" alt="School uniform bulk order" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0)); color:#fff; font-size:0.9rem; font-weight:600;">School Order</span>
+      </div>
+      <div class="gallery-item" style="position:relative;">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784270337/Screenshot_2026-07-17_120834_afhkre.png" alt="Corporate uniform order" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0)); color:#fff; font-size:0.9rem; font-weight:600;">Corporate Order</span>
+      </div>
+      <div class="gallery-item" style="position:relative;">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784270487/Bulk_Stitching_dtvl42.webp" alt="Bulk stitching" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0)); color:#fff; font-size:0.9rem; font-weight:600;">Bulk Stitching</span>
+      </div>
+      <div class="gallery-item" style="position:relative;">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784270749/Shop_Front_alffqb.webp" alt="Store photo" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0)); color:#fff; font-size:0.9rem; font-weight:600;">Shop Front</span>
+      </div>
+      <div class="gallery-item" style="position:relative;">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784270837/Fabrics_Selection_afquxd.avif" alt="Fabric selection" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0)); color:#fff; font-size:0.9rem; font-weight:600;">Fabric Selection</span>
+      </div>
+      <div class="gallery-item" style="position:relative;">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784270975/Finished_Balzers_h0wip6.jpg" alt="Finished blazers" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0)); color:#fff; font-size:0.9rem; font-weight:600;">Finished Blazers</span>
+      </div>
+      <div class="gallery-item" style="position:relative;">
+        <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784271047/Screenshot_2026-07-17_122032_peklhc.png" alt="Tailoring team at work" width="400" height="300" decoding="async" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0)); color:#fff; font-size:0.9rem; font-weight:600;">Team at Work</span>
+      </div>
     </div>
   </div>
 </section>
@@ -290,7 +380,7 @@
         </div>
         <a href="bulk-orders.html" class="btn-primary mt-30">Request a Bulk Quote</a>
       </div>
-      <img src="https://placehold.co/500x400/141414/d81324?text=Bulk+Uniforms" alt="Bulk uniforms" style="border-radius:14px;" width="500" height="400" decoding="async" loading="lazy">
+      <img src="https://res.cloudinary.com/dt97offnl/image/upload/v1784273336/Bulk_Uniform_mqgtff.png" alt="Bulk uniforms" style="border-radius:14px; width:100%; height:100%; object-fit:cover;" width="500" height="400" decoding="async" loading="lazy">
     </div>
   </div>
 </section>
@@ -364,6 +454,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="bulk-orders.html">Bulk Orders</a></li>
         <li><a href="blazer-order.html">Order a Blazer</a></li>
+      <li><a href="wedding-order.html">Wedding Order</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
     </div>
