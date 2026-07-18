@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://justlook.in/sitemap.xml
+Sitemap: https://justlookshop.in/sitemap.xml
