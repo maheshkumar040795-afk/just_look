@@ -16,6 +16,76 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* ===== Rich Premium Wedding Stage Hero (overrides default dark hero) ===== */
+  section.page-hero{
+    position:relative;
+    overflow:hidden;
+    border-bottom:3px solid rgba(255,215,140,0.55);
+    background:
+      radial-gradient(ellipse at 50% 10%, rgba(255,215,140,0.45) 0%, rgba(255,215,140,0) 55%),
+      linear-gradient(160deg,#2b0a18 0%,#5c0f2e 20%,#8a1743 40%,#b8264f 58%,#d4548a 76%,#f0c987 100%);
+  }
+  section.page-hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(100deg, rgba(255,255,255,0.035) 0px, rgba(255,255,255,0.035) 2px, transparent 2px, transparent 26px);
+    pointer-events:none;
+    z-index:1;
+  }
+  /* gold shimmer sweep for a premium, catwalk-light feel */
+  section.page-hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(100deg, transparent 0%, transparent 42%, rgba(255,224,168,0.28) 48%, rgba(255,224,168,0.55) 50%, rgba(255,224,168,0.28) 52%, transparent 58%, transparent 100%);
+    background-size:280% 280%;
+    animation:weddingShimmer 7s ease-in-out infinite;
+    pointer-events:none;
+    z-index:2;
+  }
+  @keyframes weddingShimmer{
+    0%{ background-position:220% 0%; }
+    100%{ background-position:-220% 0%; }
+  }
+  section.page-hero .hero-floral{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    z-index:3;
+    pointer-events:none;
+  }
+  section.page-hero .hero-floral svg{ width:100%; height:100%; display:block; }
+  section.page-hero .hero-content{
+    position:relative;
+    z-index:4;
+  }
+  section.page-hero .hero-content h1{
+    font-family:'Playfair Display', serif;
+    color:#fff8ef;
+    text-shadow:0 4px 22px rgba(40,5,20,0.55), 0 1px 0 rgba(0,0,0,0.25);
+  }
+  section.page-hero .hero-content p{
+    color:#ffe9d6;
+    text-shadow:0 2px 10px rgba(40,5,20,0.5);
+  }
+  section.page-hero .hero-content .breadcrumb{
+    color:#f6d9c9;
+  }
+  section.page-hero .hero-content .breadcrumb a{
+    color:#ffd166;
+  }
+
+  /* ===== Premium gold/rose icon accents (Wedding Promise cards) ===== */
+  .feature-icon{
+    width:64px; height:64px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px; font-size:1.5rem; color:#fff;
+    box-shadow:0 8px 18px rgba(138,23,67,0.25);
+  }
+  .feature-card:nth-of-type(1) .feature-icon{ background:linear-gradient(135deg,#8a1743,#d4548a); }
+  .feature-card:nth-of-type(2) .feature-icon{ background:linear-gradient(135deg,#b8264f,#f0c987); }
+  .feature-card:nth-of-type(3) .feature-icon{ background:linear-gradient(135deg,#5c0f2e,#8a1743); }
+  .feature-card:nth-of-type(4) .feature-icon{ background:linear-gradient(135deg,#d4548a,#f0c987); }
+</style>
 </head>
 <body>
 
@@ -30,16 +100,19 @@
       <li><a href="about.html">About</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="contact.html" class="nav-cta">Get Quote</a></li>
+      <li><a href="customize-work.html">Customize Work</a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
 <section class="page-hero">
-  <h1>Wedding Order</h1>
-  <p>Groom's wedding wear, tailored to perfection — order yours on WhatsApp.</p>
-  <div class="breadcrumb"><a href="index.html">Home</a> / Wedding Order</div>
+  <div class="hero-floral" id="heroFloral" aria-hidden="true"></div>
+  <div class="hero-content">
+    <h1>Wedding Order</h1>
+    <p>Groom's wedding wear, tailored to perfection — order yours on WhatsApp.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> / Wedding Order</div>
+  </div>
 </section>
 
 <!-- WEDDING PHOTO CARDS -->
@@ -158,7 +231,7 @@
     </div>
     <div class="footer-links">
       <h4>Quick Links</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="wedding-order.html">Wedding Order</a></li><li><a href="about.html">About Us</a></li></ul>
+      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="wedding-order.html">Wedding Order</a></li><li><a href="customize-work.html">Customize Work</a></li><li><a href="about.html">About Us</a></li></ul>
     </div>
     <div class="footer-links">
       <h4>More</h4>
@@ -177,12 +250,93 @@
 </footer>
 
 <div class="floating-buttons">
+  <a href="https://www.instagram.com/__just___look__?igsh=YWExY2pvY2o3ZHds" class="float-btn instagram-btn" target="_blank" rel="noopener" title="Instagram" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff;"><i class="fab fa-instagram"></i></a>
   <a href="#" data-wa-generic class="float-btn whatsapp-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="#" data-call class="float-btn call-btn" title="Call Now"><i class="fas fa-phone"></i></a>
 </div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 800, once: true });</script>
+
+<!-- Procedural floral wedding-stage decoration for the hero -->
+<script>
+(function(){
+  var mount = document.getElementById('heroFloral');
+  if(!mount) return;
+
+  var BLOOM_COLORS = ['#e63960','#ff6f91','#ffffff','#ff9f43','#ffcf5c','#d63447','#ffb3c6'];
+  var LEAF_COLORS  = ['#2f7d4f','#3fa066','#256b43'];
+
+  function rand(min,max){ return min + Math.random()*(max-min); }
+  function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+  function cluster(originX, originY, mirror, count, spreadX, spreadY, sizeMax, sizeMin){
+    var out = '';
+    for(var i=0;i<count;i++){
+      var t = i/count;
+      var dx = (t*spreadX) + rand(-16,16);
+      if(mirror) dx = -dx;
+      var dy = (t*spreadY) + rand(-16,16);
+      var size = rand(sizeMin, sizeMax) * (1 - t*0.35);
+      var color = pick(BLOOM_COLORS);
+      var rot = rand(0,360);
+      out += '<use href="#bloom" x="'+(originX+dx-size)+'" y="'+(originY+dy-size)+'" width="'+(size*2)+'" height="'+(size*2)+'" style="color:'+color+'" transform="rotate('+rot+' '+(originX+dx)+' '+(originY+dy)+')"/>';
+    }
+    var leafCount = Math.round(count*0.8);
+    for(var j=0;j<leafCount;j++){
+      var t2 = j/leafCount;
+      var dx2 = (t2*spreadX*1.1) + rand(-20,20);
+      if(mirror) dx2 = -dx2;
+      var dy2 = (t2*spreadY*1.1) + rand(-20,20);
+      var lsize = rand(10,18);
+      var lrot = rand(0,360);
+      out += '<use href="#leaf" x="'+(originX+dx2-lsize)+'" y="'+(originY+dy2-lsize/2)+'" width="'+(lsize*2)+'" height="'+lsize+'" style="color:'+pick(LEAF_COLORS)+'" transform="rotate('+lrot+' '+(originX+dx2)+' '+(originY+dy2)+')"/>';
+    }
+    return out;
+  }
+
+  function lights(n, w, h){
+    var out = '';
+    for(var i=0;i<n;i++){
+      var x = rand(0,w), y = rand(0,h*0.7), r = rand(1.4,3.2);
+      var dur = rand(2,4.5).toFixed(2);
+      var delay = rand(0,3).toFixed(2);
+      out += '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#ffe29a">' +
+             '<animate attributeName="opacity" values="0.15;1;0.15" dur="'+dur+'s" begin="'+delay+'s" repeatCount="indefinite"/>' +
+             '</circle>';
+    }
+    return out;
+  }
+
+  var W = 1200, H = 420;
+  var svg = '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">';
+  svg += '<defs>';
+  svg += '<symbol id="bloom" viewBox="-10 -10 20 20">' +
+           '<circle cx="0" cy="-6" r="4.4" fill="currentColor"/>' +
+           '<circle cx="5.7" cy="-3" r="4.4" fill="currentColor"/>' +
+           '<circle cx="5.7" cy="3" r="4.4" fill="currentColor"/>' +
+           '<circle cx="0" cy="6" r="4.4" fill="currentColor"/>' +
+           '<circle cx="-5.7" cy="3" r="4.4" fill="currentColor"/>' +
+           '<circle cx="-5.7" cy="-3" r="4.4" fill="currentColor"/>' +
+           '<circle cx="0" cy="0" r="3.1" fill="#ffd54f"/>' +
+         '</symbol>';
+  svg += '<symbol id="leaf" viewBox="-8 -4 16 8"><path d="M-8 0 Q0 -8 8 0 Q0 8 -8 0 Z" fill="currentColor"/></symbol>';
+  svg += '</defs>';
+
+  // twinkling fairy lights across the backdrop
+  svg += lights(28, W, H);
+
+  // corner garlands cascading like flowers pinned to a mandap/stage frame
+  svg += cluster(10, -10, false, 16, 230, 260, 15, 8);      // top-left
+  svg += cluster(W-10, -10, true, 16, 230, 260, 15, 8);     // top-right
+  svg += cluster(10, H+10, false, 10, 170, -150, 13, 7);    // bottom-left (smaller, cascading up)
+  svg += cluster(W-10, H+10, true, 10, 170, -150, 13, 7);   // bottom-right (smaller)
+
+  svg += '</svg>';
+  mount.innerHTML = svg;
+})();
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>

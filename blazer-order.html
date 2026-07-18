@@ -16,6 +16,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* ===== Colourful Blazer Banner ===== */
+  section.page-hero.blazer-hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(120deg, #6a0572 0%, #ab0e6a 25%, #e0165e 50%, #ff7f3f 75%, #ffcf3c 100%) !important;
+    background-size:200% 200% !important;
+    animation:blazerGradientShift 12s ease infinite;
+  }
+  @keyframes blazerGradientShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+  section.page-hero.blazer-hero::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 20% 20%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 40%),
+               radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 45%);
+    pointer-events:none;
+  }
+  section.page-hero.blazer-hero h1, section.page-hero.blazer-hero p, section.page-hero.blazer-hero .breadcrumb{ position:relative; z-index:2; }
+
+  /* ===== Colourful icons ===== */
+  .feature-icon{
+    width:64px; height:64px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px; font-size:1.5rem; color:#fff;
+  }
+  .feature-card:nth-of-type(1) .feature-icon{ background:linear-gradient(135deg,#6a0572,#ab0e6a); }
+  .feature-card:nth-of-type(2) .feature-icon{ background:linear-gradient(135deg,#e0165e,#ff7f3f); }
+  .feature-card:nth-of-type(3) .feature-icon{ background:linear-gradient(135deg,#ffcf3c,#ff7f3f); }
+  .feature-card:nth-of-type(4) .feature-icon{ background:linear-gradient(135deg,#3b82f6,#06b6d4); }
+  .feature-card:nth-of-type(5) .feature-icon{ background:linear-gradient(135deg,#8b5cf6,#ec4899); }
+</style>
 </head>
 <body>
 
@@ -30,16 +59,16 @@
       <li><a href="about.html">About</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="contact.html" class="nav-cta">Get Quote</a></li>
+      <li><a href="customize-work.html">Customize Work</a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<section class="page-hero">
-  <h1>Order a Custom Blazer</h1>
-  <p>Choose your colour, size and quantity — order instantly on WhatsApp.</p>
-  <div class="breadcrumb"><a href="index.html">Home</a> / Order a Blazer</div>
+<section class="page-hero blazer-hero">
+  <h1 style="color:#ffffff;">Order a Custom Blazer</h1>
+  <p style="color:#e8ecf5;">Choose your colour, size and quantity — order instantly on WhatsApp.</p>
+  <div class="breadcrumb" style="color:#e8ecf5;"><a href="index.html" style="color:#ffd166;">Home</a> / Order a Blazer</div>
 </section>
 
 <section>
@@ -76,7 +105,11 @@
 
         <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:10px;">Size</label>
         <div class="size-options">
-          <div class="size-chip active" onclick="selectSize(this,'36')">36</div>
+          <div class="size-chip active" onclick="selectSize(this,'28')">28</div>
+          <div class="size-chip" onclick="selectSize(this,'30')">30</div>
+          <div class="size-chip" onclick="selectSize(this,'32')">32</div>
+          <div class="size-chip" onclick="selectSize(this,'34')">34</div>
+          <div class="size-chip" onclick="selectSize(this,'36')">36</div>
           <div class="size-chip" onclick="selectSize(this,'38')">38</div>
           <div class="size-chip" onclick="selectSize(this,'40')">40</div>
           <div class="size-chip" onclick="selectSize(this,'42')">42</div>
@@ -91,7 +124,7 @@
           <button type="button" onclick="changeQty(1)">+</button>
         </div>
 
-        <div class="order-summary" id="orderSummary">Colour: <strong id="summaryColor">Navy Blue</strong> &nbsp;|&nbsp; Size: <strong>36</strong> &nbsp;|&nbsp; Qty: <strong>1</strong></div>
+        <div class="order-summary" id="orderSummary">Colour: <strong id="summaryColor">Navy Blue</strong> &nbsp;|&nbsp; Size: <strong>28</strong> &nbsp;|&nbsp; Qty: <strong>1</strong></div>
 
         <form onsubmit="orderBlazerOnWhatsApp(event)">
           <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:6px;">Your Name</label>
@@ -114,8 +147,9 @@
     <div class="grid-4">
       <div class="feature-card" data-aos="fade-up"><div class="feature-icon"><i class="fas fa-ruler-combined"></i></div><h3>True-to-Size Fit</h3><p>Standard sizing charts tested for accuracy.</p></div>
       <div class="feature-card" data-aos="fade-up" data-aos-delay="100"><div class="feature-icon"><i class="fas fa-scroll"></i></div><h3>Premium Fabric</h3><p>Durable, comfortable material with a sharp finish.</p></div>
-      <div class="feature-card" data-aos="fade-up" data-aos-delay="200"><div class="feature-icon"><i class="fas fa-rotate"></i></div><h3>Easy Exchange</h3><p>Size exchange support if the fit isn't right.</p></div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200"><div class="feature-icon"><i class="fas fa-store"></i></div><h3>Factory Outlet Blazer</h3><p>Direct from our own factory — no middlemen, honest pricing.</p></div>
       <div class="feature-card" data-aos="fade-up" data-aos-delay="300"><div class="feature-icon"><i class="fas fa-truck"></i></div><h3>Fast Dispatch</h3><p>Orders confirmed and dispatched quickly.</p></div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="400"><div class="feature-icon"><i class="fas fa-user-graduate"></i></div><h3>Who It's Beneficial For</h3><ul style="text-align:left; padding-left:18px; margin:0; font-size:0.9rem; line-height:1.7; color:var(--text-light, #555);"><li>School annual day function</li><li>School farewell function</li><li>College culturals</li><li>College farewell</li><li>Law student blazers</li><li>Casual party blazers</li></ul></div>
     </div>
   </div>
 </section>
@@ -133,7 +167,7 @@
     </div>
     <div class="footer-links">
       <h4>Quick Links</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="wedding-order.html">Wedding Order</a></li><li><a href="about.html">About Us</a></li></ul>
+      <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li><li><a href="wedding-order.html">Wedding Order</a></li><li><a href="customize-work.html">Customize Work</a></li><li><a href="about.html">About Us</a></li></ul>
     </div>
     <div class="footer-links">
       <h4>More</h4>
@@ -141,7 +175,7 @@
     </div>
     <div class="footer-contact">
       <h4>Contact Us</h4>
-      <p><i class="fas fa-phone"></i> +91 99999 99999</p>
+      <p><i class="fas fa-phone"></i> +91 63803 15297 / +91 98412 64341</p>
       <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
     </div>
   </div>
@@ -152,6 +186,7 @@
 </footer>
 
 <div class="floating-buttons">
+  <a href="https://www.instagram.com/__just___look__?igsh=YWExY2pvY2o3ZHds" class="float-btn instagram-btn" target="_blank" rel="noopener" title="Instagram" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff;"><i class="fab fa-instagram"></i></a>
   <a href="#" data-wa-generic class="float-btn whatsapp-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="#" data-call class="float-btn call-btn" title="Call Now"><i class="fas fa-phone"></i></a>
 </div>
@@ -177,26 +212,10 @@
     }, 2500);
   }
 
-  // Update the preview images to match the selected colour
+  // Colour selection only affects order details — the photo card always shows
+  // the same flipping front/back product photo, regardless of colour chosen.
   function setBlazerPreviewForColor(name, hex) {
-    const front = document.getElementById('blazerFront');
-    const back = document.getElementById('blazerBack');
-    const inner = document.getElementById('blazerFlipInner');
-    if (!front || !back || !inner) return;
-
-    if (name === 'Navy Blue') {
-      front.src = REAL_FRONT_URL;
-      back.src = REAL_BACK_URL;
-      startBlazerFlip();
-    } else {
-      // No real front/back photos for this colour yet — show a static placeholder
-      clearInterval(blazerFlipInterval);
-      inner.style.transform = 'rotateY(0deg)';
-      const label = name.replace(/ /g, '+');
-      const placeholder = `https://placehold.co/700x900/${hex.replace('#', '')}/ffffff?text=${label}+Blazer`;
-      front.src = placeholder;
-      back.src = placeholder;
-    }
+    // Intentionally left as a no-op: photo stays constant across colours.
   }
 
   // Keep preview in sync with selected colour

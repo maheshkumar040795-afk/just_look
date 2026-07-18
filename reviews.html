@@ -22,7 +22,33 @@
 .review-card p{color:#e8e8e8 !important;}
 .review-card .review-author h4{color:#ffffff !important;}
 .review-card .review-author span{color:#a8a8a8 !important;}
-.review-card .review-avatar{background:var(--accent, #d62828); color:#fff;}
+.review-card .review-avatar{color:#fff;}
+.review-card:nth-of-type(8n+1) .review-avatar{ background:linear-gradient(135deg,#f59e0b,#ec4899); }
+.review-card:nth-of-type(8n+2) .review-avatar{ background:linear-gradient(135deg,#3b82f6,#06b6d4); }
+.review-card:nth-of-type(8n+3) .review-avatar{ background:linear-gradient(135deg,#10b981,#22c55e); }
+.review-card:nth-of-type(8n+4) .review-avatar{ background:linear-gradient(135deg,#8b5cf6,#a855f7); }
+.review-card:nth-of-type(8n+5) .review-avatar{ background:linear-gradient(135deg,#ef4444,#f43f5e); }
+.review-card:nth-of-type(8n+6) .review-avatar{ background:linear-gradient(135deg,#14b8a6,#0d9488); }
+.review-card:nth-of-type(8n+7) .review-avatar{ background:linear-gradient(135deg,#eab308,#ca8a04); }
+.review-card:nth-of-type(8n+8) .review-avatar{ background:linear-gradient(135deg,#ec4899,#db2777); }
+
+/* ===== Colourful Reviews Banner ===== */
+section.page-hero.reviews-hero{
+  position:relative; overflow:hidden;
+  background:linear-gradient(120deg, #eab308 0%, #f97316 30%, #ec4899 65%, #8b5cf6 100%);
+  background-size:200% 200%;
+  animation:reviewsGradientShift 12s ease infinite;
+}
+@keyframes reviewsGradientShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+section.page-hero.reviews-hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 20% 20%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 40%),
+             radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 45%);
+  pointer-events:none;
+}
+section.page-hero.reviews-hero h1, section.page-hero.reviews-hero p{ position:relative; z-index:2; color:#fff; text-shadow:0 3px 16px rgba(0,0,0,0.25); }
+section.page-hero.reviews-hero .breadcrumb{ position:relative; z-index:2; color:rgba(255,255,255,0.9); }
+section.page-hero.reviews-hero .breadcrumb a{ color:#fff; font-weight:600; }
 </style>
 </head>
 <body>
@@ -38,13 +64,13 @@
       <li><a href="about.html">About</a></li>
       <li><a href="reviews.html" class="active">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="contact.html" class="nav-cta">Get Quote</a></li>
+      <li><a href="customize-work.html">Customize Work</a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<section class="page-hero">
+<section class="page-hero reviews-hero">
   <h1>Customer Reviews</h1>
   <p>See what schools, businesses and individuals say about Just Look.</p>
   <div class="breadcrumb"><a href="index.html">Home</a> / Reviews</div>
@@ -124,7 +150,7 @@
     <div class="footer-links">
       <h4>Quick Links</h4>
       <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li>
-      <li><a href="wedding-order.html">Wedding Order</a></li><li><a href="about.html">About Us</a></li></ul>
+      <li><a href="wedding-order.html">Wedding Order</a></li><li><a href="customize-work.html">Customize Work</a></li><li><a href="about.html">About Us</a></li></ul>
     </div>
     <div class="footer-links">
       <h4>More</h4>
@@ -143,6 +169,7 @@
 </footer>
 
 <div class="floating-buttons">
+  <a href="https://www.instagram.com/__just___look__?igsh=YWExY2pvY2o3ZHds" class="float-btn instagram-btn" target="_blank" rel="noopener" title="Instagram" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff;"><i class="fab fa-instagram"></i></a>
   <a href="#" data-wa-generic class="float-btn whatsapp-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="#" data-call class="float-btn call-btn" title="Call Now"><i class="fas fa-phone"></i></a>
 </div>

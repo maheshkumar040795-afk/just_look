@@ -15,6 +15,42 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* ===== Colourful About Banner ===== */
+  section.page-hero.about-hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(120deg, #06b6d4 0%, #3b82f6 30%, #8b5cf6 65%, #ec4899 100%);
+    background-size:200% 200%;
+    animation:aboutGradientShift 12s ease infinite;
+  }
+  @keyframes aboutGradientShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+  section.page-hero.about-hero::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 20% 20%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 40%),
+               radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 45%);
+    pointer-events:none;
+  }
+  section.page-hero.about-hero h1, section.page-hero.about-hero p{ position:relative; z-index:2; color:#fff; text-shadow:0 3px 16px rgba(0,0,0,0.25); }
+  section.page-hero.about-hero .breadcrumb{ position:relative; z-index:2; color:rgba(255,255,255,0.9); }
+  section.page-hero.about-hero .breadcrumb a{ color:#fff; font-weight:600; }
+
+  /* ===== Colourful icons ===== */
+  .mini-card i{
+    display:flex; align-items:center; justify-content:center;
+    width:56px; height:56px; border-radius:50%;
+    color:#fff !important; font-size:1.3rem;
+    margin:0 auto 12px;
+  }
+  .mini-card:nth-of-type(1) i{ background:linear-gradient(135deg,#06b6d4,#3b82f6); }
+  .mini-card:nth-of-type(2) i{ background:linear-gradient(135deg,#8b5cf6,#ec4899); }
+  .feature-icon{
+    width:64px; height:64px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px; font-size:1.5rem; color:#fff;
+  }
+  .feature-card:nth-of-type(1) .feature-icon{ background:linear-gradient(135deg,#f59e0b,#ec4899); }
+  .feature-card:nth-of-type(2) .feature-icon{ background:linear-gradient(135deg,#10b981,#3b82f6); }
+</style>
 </head>
 <body>
 
@@ -29,13 +65,13 @@
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="contact.html" class="nav-cta">Get Quote</a></li>
+      <li><a href="customize-work.html">Customize Work</a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<section class="page-hero">
+<section class="page-hero about-hero">
   <h1>About Just Look</h1>
   <p>Customize Your Style — Chennai's trusted tailoring & uniform specialists.</p>
   <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
@@ -111,7 +147,7 @@
     <div class="footer-links">
       <h4>Quick Links</h4>
       <ul><li><a href="index.html">Home</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="blazer-order.html">Order a Blazer</a></li>
-      <li><a href="wedding-order.html">Wedding Order</a></li><li><a href="about.html">About Us</a></li></ul>
+      <li><a href="wedding-order.html">Wedding Order</a></li><li><a href="customize-work.html">Customize Work</a></li><li><a href="about.html">About Us</a></li></ul>
     </div>
     <div class="footer-links">
       <h4>More</h4>
@@ -119,7 +155,8 @@
     </div>
     <div class="footer-contact">
       <h4>Contact Us</h4>
-      <p><i class="fas fa-phone"></i> +91 99999 99999</p>
+      <p><i class="fas fa-phone"></i> +91 63803 15297</p>
+      <p><i class="fas fa-phone"></i> +91 98412 64341</p>
       <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
     </div>
   </div>
@@ -130,6 +167,7 @@
 </footer>
 
 <div class="floating-buttons">
+  <a href="https://www.instagram.com/__just___look__?igsh=YWExY2pvY2o3ZHds" class="float-btn instagram-btn" target="_blank" rel="noopener" title="Instagram" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff;"><i class="fab fa-instagram"></i></a>
   <a href="#" data-wa-generic class="float-btn whatsapp-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="#" data-call class="float-btn call-btn" title="Call Now"><i class="fas fa-phone"></i></a>
 </div>
