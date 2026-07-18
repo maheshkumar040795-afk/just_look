@@ -79,8 +79,18 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
 }
 .logo { display: flex; align-items: center; gap: 10px; }
+/* NOTE: 'Directive Four' is a premium display font (not on Google Fonts).
+   Upload the font file (.woff2/.woff/.ttf) and we'll wire up @font-face here, e.g.:
+   @font-face {
+     font-family: 'Directive Four';
+     src: url('fonts/DirectiveFour-Italic.woff2') format('woff2');
+     font-style: italic;
+     font-weight: 400;
+   }
+   Until then this falls back to an italic serif so layout doesn't break. */
 .logo-text {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Directive Four', 'Playfair Display', serif;
+  font-style: italic;
   font-size: 2rem;
   font-weight: 700;
   color: var(--dark);
@@ -88,7 +98,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1;
 }
 .logo-text span { color: var(--accent); }
-.logo-tag { font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); display: block; margin-top: 4px; }
+.logo-tag { font-family: 'Marcellus', serif; font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); display: block; margin-top: 4px; }
 
 .nav-links { display: flex; list-style: none; gap: 32px; align-items: center; }
 .nav-links a {
@@ -110,7 +120,17 @@ a { text-decoration: none; color: inherit; }
 }
 .nav-cta:hover { background: var(--accent) !important; }
 
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 14px;
+  margin: -14px;
+  touch-action: manipulation;
+}
 .hamburger span { width: 26px; height: 2px; background: var(--dark); transition: 0.3s; }
 .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
